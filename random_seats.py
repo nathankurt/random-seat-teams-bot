@@ -26,13 +26,13 @@ if args.cols:
 else:
     cols = 2
 
-name_ls = ["Nate", "Ben", "Laurent", "Gabe", "Jessy", "Imran", "Dionte", "Sakib"]
+name_ls = ["Nate", "Ben", "Laurant", "Gabe", "Jessy", "Imran", "Dionte", "Sakib"]
 random.shuffle(name_ls)
 
 
 string = "FRONT OF CLASS"
 print(f"{string:^50}")
-longest_name_len = max(len(x) for x in name_ls)
+#longest_name_len = max(len(x) for x in name_ls)
 
 for i in range(cols):
     for j in range(rows):
@@ -42,7 +42,7 @@ for i in range(cols):
             name2 = name_ls.pop(0)
             #table = f"{name1:^{longest_name_len}}   {name2:^{longest_name_len}}                           "
             #can't use thing above because it doesn't like text formatting that way
-            table = f"{name1:>10}   {name2:<7}"
+            table = f"{name1:>11}   {name2:<7}"
             print(table, end="    ")
     print("\n")
 

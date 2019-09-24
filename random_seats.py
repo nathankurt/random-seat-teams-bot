@@ -40,8 +40,10 @@ for i in range(cols):
             # 2 per table so pop both names from list then put in front left.
             name1 = name_ls.pop(0)
             name2 = name_ls.pop(0)
-            table = f"{name1:^{longest_name_len}}   {name2:^{longest_name_len}}"
-            print(table, end="           ")
+            #table = f"{name1:^{longest_name_len}}   {name2:^{longest_name_len}}                           "
+            #can't use thing above because it doesn't like text formatting that way
+            table = f"{name1:>10}   {name2:<7}"
+            print(table, end="    ")
     print("\n")
 
 

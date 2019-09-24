@@ -1,0 +1,39 @@
+name: Python application
+
+on: [push]
+#  schedule:
+#  - cron: 0 7 * * 1-5
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v1
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements.txt
+    - name: Lint with flake8
+      run: |
+        pip install flake8
+        # stop the build if there are Python syntax errors or undefined names
+        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+    - name: Run randomizer then curl command
+      run: |
+       text=$(python3 random_seats.py);
+       curl -H "Content-Type: application/json" -d '{"text": "'"$text"'"}' https://outlook.office.com/webhook/4f3544b6-04f2-41cc-8913-f9e5fa78d150@70ebe3a3-5b30-435d-9d67-7716d74ca190/IncomingWebhook/8882137cbf6c4da6b13d1bf91e15609f/6a894b69-210a-4fad-b9a1-92c64dc155e2
+       
+       
+       
+       
+       
+      
+        

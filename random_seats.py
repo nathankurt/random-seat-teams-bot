@@ -26,7 +26,7 @@ if args.cols:
 else:
     cols = 2
 
-name_ls = ["Nate", "Ben", "Laurant", "Gabe", "Jessy", "Imran", "Dionte", "Sakib"]
+name_ls = ["Nate", "Ben", "Laurent", "Gabe", "Jessy", "Imran", "Dionte", "Sakib"]
 random.shuffle(name_ls)
 
 
@@ -42,6 +42,7 @@ for i in range(cols):
             name2 = name_ls.pop(0)
             #table = f"{name1:^{longest_name_len}}   {name2:^{longest_name_len}}                           "
             #can't use thing above because it doesn't like text formatting that way
+            #11 and 7 just got from experimenting and playing around with names
             table = f"{name1:>11}   {name2:<7}"
             print(table, end="    ")
     print("\n")

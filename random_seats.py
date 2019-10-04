@@ -46,7 +46,7 @@ for i in range(cols):
             table = f"{name1:>11}   {name2:<7}"
             #print(table, end="    ")
     #print("\n")
-print("You guys make me sad")
+print("RIP SEATING CHART \nYou guys make me sad")
 
 
 

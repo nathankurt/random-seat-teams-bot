@@ -31,7 +31,7 @@ random.shuffle(name_ls)
 
 
 string = "FRONT OF CLASS"
-print(f"{string:^50}")
+#print(f"{string:^50}")
 #longest_name_len = max(len(x) for x in name_ls)
 
 for i in range(cols):
@@ -44,8 +44,10 @@ for i in range(cols):
             #can't use thing above because it doesn't like text formatting that way
             #11 and 7 just got from experimenting and playing around with names
             table = f"{name1:>11}   {name2:<7}"
-            print(table, end="    ")
-    print("\n")
+            #print(table, end="    ")
+    #print("\n")
+print("You guys make me sad")
+
 
 
 

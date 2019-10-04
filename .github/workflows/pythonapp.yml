@@ -1,8 +1,8 @@
 name: Python application
-on: [push]
-  #schedule:
+on:
+  schedule:
     # * is a special character in YAML so you have to quote this string
-  #  - cron: '0 11 * * 1-5'
+    - cron: '0 11 * * 1-5'
 
 jobs:
   build:
@@ -29,8 +29,8 @@ jobs:
     - name: Run randomizer then curl command
       run: |
        text=$(python3 random_seats.py);
-       #curl -H "Content-Type: application/json" -d '{"text": "'"$text"'"}' ${{ secrets.teams_bot_webhook_url}}
-       curl -H "Content-Type: application/json" -d '{"text": "'"$text"'"}' ${{ secrets.teams_test_bot_webhook_url}}
+       curl -H "Content-Type: application/json" -d '{"text": "'"$text"'"}' ${{ secrets.teams_bot_webhook_url}}
+       #curl -H "Content-Type: application/json" -d '{"text": "'"$text"'"}' ${{ secrets.teams_test_bot_webhook_url}}
 
          
        

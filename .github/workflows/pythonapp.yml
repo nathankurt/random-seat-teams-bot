@@ -29,8 +29,8 @@ jobs:
     - name: Run randomizer then curl command
       run: |
        text=$(python3 random_seats.py);
-       curl -H "Content-Type: application/json" -d '{"text": "'"$text"'"}' https://outlook.office.com/webhook/6228c8fd-b74f-4e7d-9e5c-b2cc4b498197@70ebe3a3-5b30-435d-9d67-7716d74ca190/IncomingWebhook/cf7d764ba0474abb8cc02e08ad24c206/6a894b69-210a-4fad-b9a1-92c64dc155e2
-       curl -H "Content-Type: application/json" -d '{"text": "'"$text"'"}' https://outlook.office.com/webhook/4f3544b6-04f2-41cc-8913-f9e5fa78d150@70ebe3a3-5b30-435d-9d67-7716d74ca190/IncomingWebhook/8882137cbf6c4da6b13d1bf91e15609f/6a894b69-210a-4fad-b9a1-92c64dc155e2
+       curl -H "Content-Type: application/json" -d '{"text": "'"$text"'"}' ${{ secrets.teams_bot_webhook_url}}
+       curl -H "Content-Type: application/json" -d '{"text": "'"$text"'"}' ${{ secrets.teams_test_bot_webhook_url}}
       
        
        

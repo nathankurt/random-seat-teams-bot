@@ -39,8 +39,6 @@ else:
     TeamsMessage.text("```" + "\n".join(scenes[random.choice(list(scenes))])+"```") 
 
 
-
-
-
+TeamsMessage.send()
 
 

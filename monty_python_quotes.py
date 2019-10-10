@@ -34,7 +34,7 @@ if (args.scene):
 else:
     #print("getting here")
     scene_num = random.choice(list(scenes))
-    TeamsMessage.tile("Monty Python " + scene_num )
+    TeamsMessage.title("Monty Python " + scene_num )
 
     TeamsMessage.text("```" + "\n".join(scenes[random.choice(list(scenes))])+"```") 
 

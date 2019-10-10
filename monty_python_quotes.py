@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
-import random, argparse
+import random, argparse, pymsteams
 
 import re
 
 parser = argparse.ArgumentParser()
 parser.add_argument("-s", "--scene", help="what scene to post in number")
+parser.add_argument("-u", "--url", help="webhook key that you need to run the script")
 args = parser.parse_args()
 
 ls = []
@@ -21,14 +22,22 @@ with open('montypython.txt', 'r') as f:
         scenes[scene_num].append(line)
 
 
+
+TeamsMessage = pymsteams.connectorcard(args.url)
+
+
 if (args.scene):
     scene_num = "Scene"+args.scene
-    print("\n".join(scenes[scene_num]))
+    TeamsMessage.title("Monty Python Scene " + args.scene)
+    TeamsMessage.text("```"+"\n".join(scenes[scene_num])+"```")
 
 else:
     #print("getting here")
-    print("\n".join(scenes[random.choice(list(scenes))])) 
-    
+    scene_num = random.choice(list(scenes))
+    TeamsMessage.tile("Monty Python " + scene_num )
+
+    TeamsMessage.text("```" + "\n".join(scenes[random.choice(list(scenes))])+"```") 
+
 
 
 

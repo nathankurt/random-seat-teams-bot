@@ -36,7 +36,7 @@ else:
     scene_num = random.choice(list(scenes))
     TeamsMessage.title("Monty Python " + scene_num )
 
-    TeamsMessage.text("``` " + "\n".join(scenes[random.choice(list(scenes))])+" ```") 
+    TeamsMessage.text("\n".join(scenes[random.choice(list(scenes))])) 
 
 
 TeamsMessage.send()
